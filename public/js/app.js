@@ -9,9 +9,9 @@ weatherForm.addEventListener('submit', (event) => {
   const location = search.value;
   messageOne.textContent = 'Loading...';
   messageTwo.textContent = '';
-  fetch('http://localhost:3000/weather?address=' + location).then((res) => {
+  fetch('/weather?address=' + location).then((res) => {
     res.json().then((data) => {
-      console.log(data);
+      //console.log(data);
       if (data.err) {
         messageOne.textContent = 'no data available at the moment';
         messageTwo.textContent = '';
