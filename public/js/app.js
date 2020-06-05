@@ -25,7 +25,7 @@ weatherForm.addEventListener('submit', (event) => {
 
       messageOne.textContent = data.forecast;
       messageTwo.textContent = data.location;
-
+      weatherImg.src = data.weatherIcon;
       //console.log(data.forecast, data.location);
     });
   });
