@@ -2,6 +2,7 @@ const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
+const weatherImg = document.querySelector('#weather-img');
 
 weatherForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -18,8 +19,10 @@ weatherForm.addEventListener('submit', (event) => {
 
         return;
       }
+
       messageOne.textContent = data.forecast;
       messageTwo.textContent = data.location;
+      weatherImg.src = data.weatherIcon;
       //console.log(data.forecast, data.location);
     });
   });

@@ -48,10 +48,12 @@ app.get('/weather', (req, res) => {
       if (err) {
         return res.send({ err });
       }
+      //console.log(forecastData[0].weatherIcon);
       res.send({
         address: req.query.address,
         location,
-        forecast: forecastData,
+        forecast: forecastData[0].data,
+        weatherIcon: forecastData[0].weatherIcon,
       });
     });
   });

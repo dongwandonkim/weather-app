@@ -15,7 +15,16 @@ const forecast = (longitude, latitude, callback) => {
     } else {
       //console.log(body.current);
       const data = `${body.current.weather_descriptions}. It is currently ${body.current.temperature} degrees out. There is ${body.current.precip}% chance of rain.`;
-      callback(undefined, data);
+      const weatherIcon = body.current.weather_icons[0];
+      const finalData = [
+        {
+          data,
+          weatherIcon,
+        },
+      ];
+      //console.log(weatherIcon);
+
+      callback(undefined, finalData);
     }
   });
 };
